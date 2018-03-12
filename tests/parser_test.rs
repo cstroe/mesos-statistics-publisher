@@ -20,6 +20,13 @@ fn it_parses_json() {
     f.read_to_string(&mut json)
         .expect("something went wrong reading the file");
 
-    let state = parser::parse(json);
-    assert_eq!("e456dbcf-b4e2-4506-9040-21a1669152db".to_string(), state.unwrap().id);
+    let state = parser::parse(json).unwrap();
+    assert_eq!("e456dbcf-b4e2-4506-9040-21a1669152db".to_string(), state.id);
+
+    let frameworks = state.frameworks;
+
+    assert_eq!(1, frameworks.len());
+    let marathon = &frameworks[0];
+
+    assert_eq!("marathon", marathon.name);
 }

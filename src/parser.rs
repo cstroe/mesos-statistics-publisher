@@ -2,11 +2,17 @@ use serde_json::Error;
 use serde_json::from_str;
 
 #[derive(Serialize, Deserialize)]
-pub struct MesosState {
-  pub id: String 
+pub struct FrameworkDto {
+  pub name: String
 }
 
-pub fn parse(json: String) -> Result<MesosState, Error> {
-    let state: MesosState = from_str(&json)?;
+#[derive(Serialize, Deserialize)]
+pub struct MesosStateDto {
+  pub id: String,
+  pub frameworks: Vec<FrameworkDto>,
+}
+
+pub fn parse(json: String) -> Result<MesosStateDto, Error> {
+    let state: MesosStateDto = from_str(&json)?;
     Ok(state)
 }
