@@ -4,6 +4,7 @@ use serde_json::from_str;
 #[derive(Serialize, Deserialize)]
 pub struct TaskDto {
   pub id: String,
+  pub slave_id: String,
 }
 
 #[derive(Serialize, Deserialize)]

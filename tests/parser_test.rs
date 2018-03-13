@@ -39,4 +39,5 @@ fn it_parses_tasks() {
     assert_eq!("marathon", marathon.name);
     assert_eq!(1, marathon.tasks.len());
     assert_eq!("postgres.6c0ad1b7-26be-11e8-a7a4-0242ac110006", marathon.tasks[0].id);
+    assert_eq!("26c5dc7e-1450-41d6-8b86-56b9af06fdc2-S0", marathon.tasks[0].slave_id);
 }
