@@ -1,0 +1,195 @@
+{
+  "version": "1.0.0",
+  "git_sha": "c9b70582e9fccab8f6863b0bd3a812b5969a8c24",
+  "git_tag": "1.0.0",
+  "build_date": "2016-07-27 20:23:20",
+  "build_time": 1469651000,
+  "build_user": "ubuntu",
+  "start_time": 1520945750.01124,
+  "elected_time": 1520945750.18726,
+  "id": "26c5dc7e-1450-41d6-8b86-56b9af06fdc2",
+  "pid": "master@172.17.0.5:5050",
+  "hostname": "172.17.0.5",
+  "activated_slaves": 1,
+  "deactivated_slaves": 0,
+  "leader": "master@172.17.0.5:5050",
+  "cluster": "TestCluster",
+  "log_dir": "/var/log",
+  "flags": {
+    "agent_ping_timeout": "15secs",
+    "agent_reregister_timeout": "10mins",
+    "allocation_interval": "1secs",
+    "allocator": "HierarchicalDRF",
+    "authenticate_agents": "false",
+    "authenticate_frameworks": "false",
+    "authenticate_http_frameworks": "false",
+    "authenticate_http_readonly": "false",
+    "authenticate_http_readwrite": "false",
+    "authenticators": "crammd5",
+    "authorizers": "local",
+    "cluster": "TestCluster",
+    "framework_sorter": "drf",
+    "help": "false",
+    "hostname_lookup": "false",
+    "http_authenticators": "basic",
+    "initialize_driver_logging": "true",
+    "log_auto_initialize": "true",
+    "log_dir": "/var/log",
+    "logbufsecs": "0",
+    "logging_level": "INFO",
+    "max_agent_ping_timeouts": "5",
+    "max_completed_frameworks": "50",
+    "max_completed_tasks_per_framework": "1000",
+    "port": "5050",
+    "quiet": "false",
+    "quorum": "1",
+    "recovery_agent_removal_limit": "100%",
+    "registry": "in_memory",
+    "registry_fetch_timeout": "1mins",
+    "registry_store_timeout": "20secs",
+    "registry_strict": "false",
+    "root_submissions": "true",
+    "user_sorter": "drf",
+    "version": "false",
+    "webui_dir": "/usr/share/mesos/webui",
+    "zk": "zk://172.17.0.3:2181/mesos",
+    "zk_session_timeout": "10secs"
+  },
+  "slaves": [
+    {
+      "id": "26c5dc7e-1450-41d6-8b86-56b9af06fdc2-S0",
+      "pid": "slave(1)@172.17.0.7:5051",
+      "hostname": "172.17.0.7",
+      "registered_time": 1520945757.45595,
+      "resources": {
+        "disk": 2000,
+        "mem": 1024,
+        "gpus": 0,
+        "cpus": 4,
+        "ports": "[31000-32000]"
+      },
+      "used_resources": {
+        "disk": 0,
+        "mem": 128,
+        "gpus": 0,
+        "cpus": 1,
+        "ports": "[31034-31034]"
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "reserved_resources": {},
+      "unreserved_resources": {
+        "disk": 2000,
+        "mem": 1024,
+        "gpus": 0,
+        "cpus": 4,
+        "ports": "[31000-32000]"
+      },
+      "attributes": {},
+      "active": true,
+      "version": "1.0.0"
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "26c5dc7e-1450-41d6-8b86-56b9af06fdc2-0000",
+      "name": "marathon",
+      "pid": "scheduler-48eebd84-af0c-4724-b44f-a7a35527e573@172.17.0.6:35871",
+      "used_resources": {
+        "disk": 0,
+        "mem": 128,
+        "gpus": 0,
+        "cpus": 1,
+        "ports": "[31034-31034]"
+      },
+      "offered_resources": {
+        "disk": 0,
+        "mem": 0,
+        "gpus": 0,
+        "cpus": 0
+      },
+      "capabilities": [],
+      "hostname": "aaea9af08b07",
+      "webui_url": "http://aaea9af08b07:8080",
+      "active": true,
+      "user": "root",
+      "failover_timeout": 604800,
+      "checkpoint": true,
+      "role": "*",
+      "registered_time": 1520945760.27213,
+      "unregistered_time": 0,
+      "resources": {
+        "disk": 0,
+        "mem": 128,
+        "gpus": 0,
+        "cpus": 1,
+        "ports": "[31034-31034]"
+      },
+      "tasks": [
+        {
+          "id": "postgres.6c0ad1b7-26be-11e8-a7a4-0242ac110006",
+          "name": "postgres",
+          "framework_id": "26c5dc7e-1450-41d6-8b86-56b9af06fdc2-0000",
+          "executor_id": "",
+          "slave_id": "26c5dc7e-1450-41d6-8b86-56b9af06fdc2-S0",
+          "state": "TASK_RUNNING",
+          "resources": {
+            "disk": 0,
+            "mem": 128,
+            "gpus": 0,
+            "cpus": 1,
+            "ports": "[31034-31034]"
+          },
+          "statuses": [
+            {
+              "state": "TASK_RUNNING",
+              "timestamp": 1520945996.40659,
+              "container_status": {
+                "network_infos": [
+                  {
+                    "ip_addresses": [
+                      {
+                        "ip_address": "172.17.0.7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "discovery": {
+            "visibility": "FRAMEWORK",
+            "name": "postgres",
+            "ports": {
+              "ports": [
+                {
+                  "number": 31034,
+                  "protocol": "tcp"
+                }
+              ]
+            }
+          },
+          "container": {
+            "type": "DOCKER",
+            "docker": {
+              "image": "postgres:latest",
+              "network": "HOST",
+              "privileged": false,
+              "force_pull_image": false
+            }
+          }
+        }
+      ],
+      "completed_tasks": [],
+      "offers": [],
+      "executors": []
+    }
+  ],
+  "completed_frameworks": [],
+  "orphan_tasks": [],
+  "unregistered_frameworks": []
+}

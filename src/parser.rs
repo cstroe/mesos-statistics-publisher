@@ -2,8 +2,14 @@ use serde_json::Error;
 use serde_json::from_str;
 
 #[derive(Serialize, Deserialize)]
+pub struct TaskDto {
+  pub id: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct FrameworkDto {
-  pub name: String
+  pub name: String,
+  pub tasks: Vec<TaskDto>,
 }
 
 #[derive(Serialize, Deserialize)]
