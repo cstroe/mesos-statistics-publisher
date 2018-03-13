@@ -26,6 +26,7 @@ fn it_parses_json() {
 
     let marathon = &frameworks[0];
     assert_eq!("marathon", marathon.name);
+    assert_eq!(0, marathon.tasks.len());
 }
 
 #[test]
