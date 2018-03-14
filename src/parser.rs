@@ -27,5 +27,6 @@ pub struct MesosStateDto {
 }
 
 pub fn parse(json: String) -> Result<MesosStateDto, Error> {
+    info!("Parsing json");
     Ok(from_str(&json)?)
 }

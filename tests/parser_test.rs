@@ -1,4 +1,5 @@
 extern crate mesos_statistics_publisher;
+extern crate simple_logger;
 
 use mesos_statistics_publisher::parser;
 
@@ -17,6 +18,7 @@ fn read_file(relative_path: &str) -> String {
 
 #[test]
 fn it_parses_json() {
+    let _ = simple_logger::init();
     let json = read_file("tests/data/master-state.json");
     let state = parser::parse(json).unwrap();
     assert_eq!("e456dbcf-b4e2-4506-9040-21a1669152db".to_string(), state.id);
@@ -38,6 +40,7 @@ fn it_parses_json() {
 
 #[test]
 fn it_parses_tasks() {
+    let _ = simple_logger::init();
     let json = read_file("tests/data/master-state-with-tasks.json");
     let state = parser::parse(json).unwrap();
     assert_eq!("26c5dc7e-1450-41d6-8b86-56b9af06fdc2".to_string(), state.id);
