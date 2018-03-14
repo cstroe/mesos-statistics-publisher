@@ -27,6 +27,5 @@ pub struct MesosStateDto {
 }
 
 pub fn parse(json: String) -> Result<MesosStateDto, Error> {
-    let state: MesosStateDto = from_str(&json)?;
-    Ok(state)
+    Ok(from_str(&json)?)
 }
